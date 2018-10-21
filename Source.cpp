@@ -4,7 +4,6 @@
 #include <math.h>
 #include <GL/glut.h>
 #include "tooba.h"
-#include "Source.h"
 using namespace std;
 
 
@@ -14,23 +13,61 @@ void init(void)
 	glMatrixMode(GL_PROJECTION);
 	gluOrtho2D(0.0, 500, 0.0, 500);
 }
-void drawBricks(tooba arrayofobject[] , int x , int y , int l , int w)
+
+void drawBricks(tooba arrayofobjects[], int x, int y, int l, int w)
 {
-	int initialx = x;
-	for (int i = 0; i < 4; i++)
+	int intitialx = x;
+	
+	for (int j = 0; j < 9; j++)
 	{
-		for (int j = 0; j < 9; j++)
-		{
-			arrayofobject[j + i] = { tooba(x, y, l, w, 1, 0, 0) };
-			x += 40;
-		}
-		x = initialx;
-		y += 30;
+		//myobject.drawMyBrick(x, y, l, w);
+		//myobject(x,y,l,w,1,0,0);
+		arrayofobjects[j].setColor(1, 0, 0);
+		arrayofobjects[j].drawMyBrick(x, y, l, w);	
+		x += 40;
 	}
-	
-		
-	
-	
+	x = intitialx;
+	y += 30;
+
+	//2nd line
+
+	for (int j = 9; j < 18; j++)
+	{
+		//myobject.drawMyBrick(x, y, l, w);
+		//myobject(x,y,l,w,1,0,0);
+		arrayofobjects[j].setColor(1, 0, 0);
+		arrayofobjects[j].drawMyBrick(x, y, l, w);
+		x += 40;
+	}
+	x = intitialx;
+	y += 30;
+	//3rd line
+	for (int j = 18; j < 27; j++)
+	{
+		//myobject.drawMyBrick(x, y, l, w);
+		//myobject(x,y,l,w,1,0,0);
+		arrayofobjects[j].setColor(1, 0, 0);
+		arrayofobjects[j].drawMyBrick(x, y, l, w);
+		x += 40;
+	}
+	x = intitialx;
+	y += 30;
+
+	//4rth line 
+	for (int j = 27; j < 36; j++)
+	{
+		//myobject.drawMyBrick(x, y, l, w);
+		//myobject(x,y,l,w,1,0,0);
+		arrayofobjects[j].setColor(1, 0, 0);
+		arrayofobjects[j].drawMyBrick(x, y, l, w);
+		x += 40;
+	}
+	x = intitialx;
+	y += 30;
+
+
+
+
 
 }
 
@@ -72,8 +109,9 @@ void Display()
 	int length = 10;
 	int width = 30;
 	tooba arrayOfObjects[36];
-	//arrayOfObjects[](x, y, length, width, 1, 0, 0)
-	drawBricks(arrayOfObjects, x , y ,length,width );
+	//arrayOfObjects[36] = { tooba(x,y,length,width,1,0,0) };
+	//tooba myobject(x, y, length, width, 1, 0, 0);
+	drawBricks(arrayOfObjects, x, y, length, width);
 	glEnd();
 	glFlush();
 
@@ -90,8 +128,8 @@ void main(int argc, char** argv)
 	glutDisplayFunc(Display);
 	glutMainLoop();
 
-	
-	
+
+
 
 }
 

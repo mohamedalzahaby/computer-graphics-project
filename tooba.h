@@ -10,6 +10,8 @@ public:
 	tooba();
 	tooba(int , int ,int ,int , int ,int ,int);
 	void setCoordinates(int ,int );
+	int getXCoordinate();
+	int getYCoordinate();
 	void setColor(int, int, int);
 	void getColor();
 	void drawMyBrick(int, int, int, int);

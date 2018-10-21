@@ -4,7 +4,6 @@
 #include <math.h>
 #include <GL/glut.h>
 #include "tooba.h"
-#include "Source.h"
 using namespace std;
 
 
@@ -14,17 +13,17 @@ void init(void)
 	glMatrixMode(GL_PROJECTION);
 	gluOrtho2D(0.0, 500, 0.0, 500);
 }
-void drawBricks(tooba arrayofobject[] , int x , int y , int l , int w)
+void drawBricks(tooba object , int x , int y , int l , int w)
 {
-	int initialx = x;
+	int intitialx = x;
 	for (int i = 0; i < 4; i++)
 	{
-		for (int j = 0; j < 9; j++)
+		for (int i = 0; i < 9; i++)
 		{
-			arrayofobject[j + i] = { tooba(x, y, l, w, 1, 0, 0) };
+			object.drawMyBrick(x, y, l, w);
 			x += 40;
 		}
-		x = initialx;
+		x = intitialx;
 		y += 30;
 	}
 	
@@ -71,9 +70,8 @@ void Display()
 	int y = 300;
 	int length = 10;
 	int width = 30;
-	tooba arrayOfObjects[36];
-	//arrayOfObjects[](x, y, length, width, 1, 0, 0)
-	drawBricks(arrayOfObjects, x , y ,length,width );
+	tooba myobject(x, y, length, width, 1, 0, 0);
+	drawBricks( myobject , x , y ,length,width );
 	glEnd();
 	glFlush();
 

@@ -1,5 +1,0 @@
-﻿  tooba.cpp
-  Source.cpp
-  Generating Code...
-Source.obj : error LNK2019: unresolved external symbol "public: __thiscall tooba::tooba(void)" (??0tooba@@QAE@XZ) referenced in function "void __cdecl Display(void)" (?Display@@YAXXZ)
-c:\users\hp\documents\visual studio 2015\Projects\graphics project\Debug\graphics project.exe : fatal error LNK1120: 1 unresolved externals
